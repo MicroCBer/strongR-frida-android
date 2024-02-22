@@ -48,7 +48,9 @@ jobs:
         git clone https://github.com/frida/frida
         cd frida
         git reset --hard ${{ matrix.hash }}
-        git submodule set-url releng/meson https://github.com/frida/releng.git
+        git rm releng/meson
+        rm -rf relang
+        git submodule add releng https://github.com/frida/releng.git
         git submodule update --init --recursive
     - name: two step patch   
       shell: bash
