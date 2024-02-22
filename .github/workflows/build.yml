@@ -53,7 +53,7 @@ jobs:
         git config --global user.name "Your Name"
         git add .
         git commit -m m
-        git clone https://github.com/frida/releng.git
+        git clone --recursive https://github.com/frida/releng.git
         git submodule update --init --recursive
     - name: two step patch   
       shell: bash
