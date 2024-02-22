@@ -49,7 +49,7 @@ jobs:
         cd frida
         git reset --hard ${{ matrix.hash }}
         git rm releng/meson
-        rm -rf relang
+        git rm -r --cached relang
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         git add .
