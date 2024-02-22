@@ -45,9 +45,11 @@ jobs:
       shell: bash
       run: |
         export ANDROID_NDK_ROOT=${{ steps.setup-ndk.outputs.ndk-path }}
-        git clone --recurse-submodules https://github.com/frida/frida 
+        git clone https://github.com/frida/frida
+        cd frida
         git reset --hard ${{ matrix.hash }}
-        cd frida/frida-core
+        git submodule set-url relang https://github.com/frida/releng.git
+        git submodule update --init --recursive
     - name: two step patch   
       shell: bash
       run: |
