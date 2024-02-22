@@ -50,6 +50,8 @@ jobs:
         git reset --hard ${{ matrix.hash }}
         git rm releng/meson
         rm -rf relang
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
         git add .
         git commit -m m
         git submodule add https://github.com/frida/releng.git
