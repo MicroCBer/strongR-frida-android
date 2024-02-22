@@ -48,7 +48,7 @@ jobs:
         git clone https://github.com/frida/frida
         cd frida
         git reset --hard ${{ matrix.hash }}
-        git rm -r --cached releng/
+        rm -rf releng/
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         git add .
