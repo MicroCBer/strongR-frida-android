@@ -50,7 +50,7 @@ jobs:
         git reset --hard ${{ matrix.hash }}
         git rm releng/meson
         rm -rf relang
-        git submodule add releng https://github.com/frida/releng.git
+        git submodule add https://github.com/frida/releng.git
         git submodule update --init --recursive
     - name: two step patch   
       shell: bash
