@@ -65,4 +65,5 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.1
       with:
+        name: ${{ matrix.hash }}
         path: ${{ github.workspace }}/frida/build/frida-android-arm64/bin/frida-server
